@@ -1,0 +1,32 @@
+[
+    {
+        "image": "src/images/altra.jpg",
+        "name": "Altra 2/3",
+        "project": "Lansingerland"
+    },
+    {
+        "image": "src/images/sintra.jpg",
+        "name": "Sintra",
+        "project": "Lansingerland"
+    },
+    {
+        "image": "src/images/mistral.jpg",
+        "name": "Mistral", 
+        "project": "Lansingerland"
+    },
+    {
+        "image": "src/images/citea.jpg",
+        "name": "Citea Midi", 
+        "project": "Lansingerland"
+    },
+    {
+        "image": "src/images/brisa.jpg",
+        "name": "Brisa", 
+        "project": "Lansingerland"
+    },
+    {
+        "image": "src/images/trk.jpg",
+        "name": "TRK", 
+        "project": "Lansingerland"
+    }
+]

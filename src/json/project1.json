@@ -1,0 +1,32 @@
+[
+    {
+        "image": "src/images/altra.jpg",
+        "name": "Altra 2/3",
+        "project": "Goeree"
+    },
+    {
+        "image": "src/images/luma-bgp.jpg",
+        "name": "Luma BGP",
+        "project": "Goeree"
+    },
+    {
+        "image": "src/images/tzf.jpg",
+        "name": "TZF", 
+        "project": "Goeree"
+    },
+    {
+        "image": "src/images/fgs103.gif",
+        "name": "FGS 103", 
+        "project": "Goeree"
+    },
+    {
+        "image": "src/images/prt.jpg",
+        "name": "PRT", 
+        "project": "Goeree"
+    },
+    {
+        "image": "src/images/kfk.jpg",
+        "name": "KFK", 
+        "project": "Goeree"
+    }
+]
