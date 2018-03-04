@@ -1,17 +1,3 @@
-function stretchImage() {
-    var armatuur = $(this).closest(".armatuur");
-    armatuur.toggleClass("clicked");
-    if (armatuur.hasClass("clicked")) {
-        $(".armatuur").not(armatuur).fadeOut(200, function() {
-            armatuur.animate({'width':'100%'}, 200);
-        });
-    } else {
-        armatuur.animate({'width':'25%'}, 200, function() {
-            $(".armatuur").fadeIn(200);
-        });
-    }
-}
-
 function lightsOn() {
     var url = $(this).closest(".armatuur").children("img").attr("src");
     var armatuur = $("<img></img>");
@@ -26,38 +12,6 @@ function lightsOff() {
     $("body").css({"background-color": "#eee"});
     $(".container").show().fadeIn();
     $(this).hide().fadeOut();
-}
-
-function loadProject1() {
-    $.getJSON('src/json/project1.json', function(result) {
-        var divElements = $.map(result, function(armatuur, i) {
-            var divArmatuur = $("<div></div>");
-            divArmatuur.append("<img src=\"" + armatuur.image + "\"></img>");
-            divArmatuur.append("<p>"+armatuur.name + "</p>");
-            divArmatuur.addClass("armatuur");
-            return divArmatuur;
-        });
-        var projectName = $(document).find("#project1").text();
-        $(document).find(".title").find("h1").html(projectName);
-        $(".content").find(".armatuur").remove();
-        $(".content").append(divElements).hide().fadeIn();
-    });
-}
-
-function loadProject2() {
-    $.getJSON('src/json/project2.json', function(result) {
-        var divElements = $.map(result, function(armatuur, i) {
-            var divArmatuur = $("<div></div>");
-            divArmatuur.append("<img src=\"" + armatuur.image + "\"></img>");
-            divArmatuur.append("<p>"+armatuur.name + "</p>");
-            divArmatuur.addClass("armatuur");
-            return divArmatuur;
-        });
-        var projectName = $(document).find("#project2").text();
-        $(document).find(".title").find("h1").html(projectName);
-        $(".content").find(".armatuur").remove();
-        $(".content").append(divElements).hide().fadeIn();
-    });
 }
 
 function search() {
@@ -76,15 +30,30 @@ function search() {
             }
         });
 
-        // reset header
-        var header = "<span>Armaturen</span> checker";
-        $(document).find(".title").find("h1").html(header);
+        // print results
+        $(".content").find(".armatuur").remove();
+        $(".content").append(divElements).hide().fadeIn();
+    }); 
+}
 
+function loadFabrikant() {
+    var query = $(this).text();
+    $.getJSON('src/json/armaturen.json', function(result) {
+        var divElements = $.map(result, function(armatuur, i) {
+            if (armatuur.fabrikant.toLowerCase() == query.toLowerCase()) {
+                var divArmatuur = $("<div></div>");
+                divArmatuur.append("<img src=\"" + armatuur.image + "\"></img>");
+                divArmatuur.append("<p>"+armatuur.name + "</p>");
+                divArmatuur.addClass("armatuur");
+                return divArmatuur;                
+            } else {
+                return;
+            }
+        });
         // print results
         $(".content").find(".armatuur").remove();
         $(".content").append(divElements).hide().fadeIn();
     });
-    
 }
 
 function lazyLoad() {
@@ -129,12 +98,10 @@ function lazyLoad() {
     }
 }
 
-
 jQuery(function($){
     search();
-    $("#project1 a").on('click', loadProject1);
-    $("#project2 a").on('click', loadProject2);
-    $("#searchInputField").on('keydown', search);
+    $(".menu").on('click','a', loadFabrikant);
+    $("#searchInputField").on('keyup', search);
     $("body").on('click', ".armatuur", lightsOn);
     $("body").on('click', ".lightbox", lightsOff);
 
