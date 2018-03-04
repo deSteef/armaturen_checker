@@ -16,7 +16,7 @@ function lightsOff() {
 
 function search() {
     var query = $("#searchInputField").val();
-    $.getJSON('src/json/alle-armaturen.json', function(result) {
+    $.getJSON('src/json/armaturen.json', function(result) {
         var divElements = $.map(result, function(armatuur, i) {
 
             if (armatuur.name.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
@@ -59,7 +59,7 @@ function loadFabrikant() {
 function lazyLoad() {
     var notYetLoaded = $(".content").find(".loader");
     if (notYetLoaded.length < 1) {
-        $.ajax('src/json/alle-armaturen.json', {
+        $.ajax('src/json/armaturen.json', {
             contentType: 'application/json',
             dataType: 'json',
             beforeSend: function() {
