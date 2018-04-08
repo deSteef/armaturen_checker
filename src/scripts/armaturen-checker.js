@@ -104,6 +104,10 @@ jQuery(function($){
     $("#searchInputField").on('keyup', search);
     $("body").on('click', ".armatuur", lightsOn);
     $("body").on('click', ".lightbox", lightsOff);
+    $("h1").on('click','a', function() {
+        $("#searchInputField").val('');
+        search();
+    });
 
     $(window).scroll(function() {   
         if($(window).scrollTop() + $(window).height() == $(document).height()) {

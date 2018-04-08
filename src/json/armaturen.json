@@ -32,12 +32,12 @@
     {
         "image": "src/images/brisa.jpg",
         "name": "Brisa",
-        "fabrikant": ""
+        "fabrikant": "Lightronics"
     },
     {
         "image": "src/images/citea.jpg",
         "name": "Citea Midi",
-        "fabrikant": ""
+        "fabrikant": "Schreder"
     },
     {
         "image": "src/images/fgs103.gif",
@@ -52,7 +52,7 @@
     {
         "image": "src/images/kfk.jpg",
         "name": "KFK",
-        "fabrikant": ""
+        "fabrikant": "Lightronics"
     },
     {
         "image": "src/images/luma-bgp.jpg",
@@ -62,7 +62,7 @@
     {
         "image": "src/images/mistral.jpg",
         "name": "Mistral",
-        "fabrikant": ""
+        "fabrikant": "Lightronics"
     },
     {
         "image": "src/images/onyx.jpg",
@@ -72,7 +72,7 @@
     {
         "image": "src/images/prt.jpg",
         "name": "PRT",
-        "fabrikant": ""
+        "fabrikant": "Lightronics"
     },
     {
         "image": "src/images/scala.jpg",
@@ -92,7 +92,7 @@
     {
         "image": "src/images/sintra.jpg",
         "name": "Sintra",
-        "fabrikant": ""
+        "fabrikant": "Schreder"
     },
     {
         "image": "src/images/srs201.jpg",
@@ -101,12 +101,27 @@
     },
     {
         "image": "src/images/trk.jpg",
-        "name": "TRL",
+        "name": "TRK",
         "fabrikant": "Philips"
     },
     {
         "image": "src/images/tzf.jpg",
-        "name": "TZF",
-        "fabrikant": ""
+        "name": "TZ",
+        "fabrikant": "Schreder"
+    },
+    {
+        "image": "src/images/ampera.jpg",
+        "name": "Ampera",
+        "fabrikant": "Schreder"
+    },
+    {
+        "image": "src/images/teceo.jpg",
+        "name": "Teceo",
+        "fabrikant": "Schreder"
+    },
+    {
+        "image": "src/images/axia2.jpg",
+        "name": "Axia 2",
+        "fabrikant": "Schreder"
     }
 ]
