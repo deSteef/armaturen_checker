@@ -41,7 +41,7 @@
     },
     {
         "image": "src/images/fgs103.gif",
-        "name": "FGS 103",
+        "name": "FGS103",
         "fabrikant": "Philips"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
         "image": "src/images/srs201.jpg",
-        "name": "SRS 201",
+        "name": "SRS201",
         "fabrikant": "Philips"
     },
     {
@@ -122,6 +122,66 @@
     {
         "image": "src/images/axia2.jpg",
         "name": "Axia 2",
+        "fabrikant": "Schreder"
+    },
+    {
+        "image": "src/images/albany.jpg",
+        "name": "Albany",
+        "fabrikant": "Schreder"
+    },
+    {
+        "image": "src/images/alura.jpg",
+        "name": "Alura",
+        "fabrikant": "Schreder"
+    },
+    {
+        "image": "src/images/arc-led-bgp618.jpg",
+        "name": "Arc BGP618 LED",
+        "fabrikant": "Philips"
+    },
+    {
+        "image": "src/images/bgp760.jpg",
+        "name": "BGP760",
+        "fabrikant": "Philips"
+    },
+    {
+        "image": "src/images/cambridge-cds580.jpg",
+        "name": "Cambridge CDS580",
+        "fabrikant": "Philips"
+    },
+    {
+        "image": "src/images/cds711.jpg",
+        "name": "CDS711",
+        "fabrikant": "Philips"
+    },    
+    {
+        "image": "src/images/iridium-sgs252-led.jpg",
+        "name": "Iridium SGS252 LED",
+        "fabrikant": "Philips"
+    },
+    {
+        "image": "src/images/luma-bgp615.jpg",
+        "name": "Luma BGP615",
+        "fabrikant": "Philips"
+    },
+    {
+        "image": "src/images/luma-bgp623.jpg",
+        "name": "Luma BGP623",
+        "fabrikant": "Philips"
+    },
+    {
+        "image": "src/images/urbanstar-bds100.jpg",
+        "name": "UrbanStar BDS100",
+        "fabrikant": "Philips"
+    },
+    {
+        "image": "src/images/xgs-201.jpg",
+        "name": "XGS201",
+        "fabrikant": "Philips"
+    },
+    {
+        "image": "src/images/z1.jpg",
+        "name": "Z1",
         "fabrikant": "Schreder"
     }
 ]
