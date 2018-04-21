@@ -14,57 +14,66 @@ function lightsOff() {
     $(this).hide().fadeOut();
 }
 
-function search() {
-    var query = $("#searchInputField").val();
-    $.getJSON('src/json/armaturen.json', function(result) {
-        var divElements = $.map(result, function(armatuur, i) {
+/**
+ * Search in JSON for armaturen. 
+ * @param string query search value
+ * @param string attribute compare query with name or fabrikant of armatuur
+ */
 
-            if (armatuur.name.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
-                var divArmatuur = $("<div></div>");
-                divArmatuur.append("<img src=\"" + armatuur.image + "\"></img>");
-                divArmatuur.append("<p>"+armatuur.name + "</p>");
-                divArmatuur.addClass("armatuur");
-                return divArmatuur;
+function getArmaturen(query, attribute) {
+    $.getJSON('json/armaturen.json', function(result) {
+        var divElements = $.map(result, function(armatuur, i) {
+            // search in attribute name 
+            if (attribute === 'name') {
+                if (armatuur.name.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+                    var divArmatuur = $("<div></div>");
+                    divArmatuur.append("<img src=\"images/" + armatuur.image + "\"></img>");
+                    divArmatuur.append("<p>"+armatuur.name + "</p>");
+                    divArmatuur.addClass("armatuur");
+                    return divArmatuur;
+                } else {
+                    return;
+                }
+            // compare fabrikant
+            } else if (attribute === 'fabrikant') {
+                if (armatuur.fabrikant.toLowerCase() === query.toLowerCase()) {
+                    var divArmatuur = $("<div></div>");
+                    divArmatuur.append("<img src=\"images/" + armatuur.image + "\"></img>");
+                    divArmatuur.append("<p>"+armatuur.name + "</p>");
+                    divArmatuur.addClass("armatuur");
+                    return divArmatuur;
+                } else {
+                    return;
+                }
             } else {
-                return;
+                console.log('error occured. Searching for: ' + query + ' within ' + attribute);
             }
         });
-
         // print results
         $(".content").find(".armatuur").remove();
         $(".content").append(divElements).hide().fadeIn();
     }); 
 }
 
+function search() {
+    var query = $("#searchInputField").val();
+    getArmaturen(query, 'name');
+}
+
 function loadFabrikant() {
     var query = $(this).text();
-    $.getJSON('src/json/armaturen.json', function(result) {
-        var divElements = $.map(result, function(armatuur, i) {
-            if (armatuur.fabrikant.toLowerCase() == query.toLowerCase()) {
-                var divArmatuur = $("<div></div>");
-                divArmatuur.append("<img src=\"" + armatuur.image + "\"></img>");
-                divArmatuur.append("<p>"+armatuur.name + "</p>");
-                divArmatuur.addClass("armatuur");
-                return divArmatuur;                
-            } else {
-                return;
-            }
-        });
-        // print results
-        $(".content").find(".armatuur").remove();
-        $(".content").append(divElements).hide().fadeIn();
-    });
+    getArmaturen(query, 'fabrikant');
 }
 
 function lazyLoad() {
     var notYetLoaded = $(".content").find(".loader");
     if (notYetLoaded.length < 1) {
-        $.ajax('src/json/armaturen.json', {
+        $.ajax('json/armaturen.json', {
             contentType: 'application/json',
             dataType: 'json',
             beforeSend: function() {
                 var loadIndicator = $("<div></div>");
-                loadIndicator.append("<img src=\"src/icons/loading.svg\"></img>");
+                loadIndicator.append("<img src=\"icons/loading.svg\"></img>");
                 loadIndicator.addClass("loader");
                 $(".content").append(loadIndicator);
             },
@@ -78,7 +87,7 @@ function lazyLoad() {
                 // load all 
                 var divElements = $.map(result, function(armatuur, i) {
                     var divArmatuur = $("<div></div>");
-                    divArmatuur.append("<img src=\"" + armatuur.image + "\"></img>");
+                    divArmatuur.append("<img src=\"images/" + armatuur.image + "\"></img>");
                     divArmatuur.append("<p>"+armatuur.name + "</p>");
                     divArmatuur.addClass("armatuur");
                     return divArmatuur;
@@ -91,7 +100,7 @@ function lazyLoad() {
                 var errorDiv = $("<div></div>");
                 errorDiv.append("<p>Error fetching data</p>");
                 errorDiv.css({"color":"red", "display":"inline-block","width":"100%"}); // use css method
-                errorDiv.css({"font-weight":"bold","font-size":"1.5em"});
+                errorDiv.css({"font-weight":"bold","font-size":"1.5em","text-align":"center"});
                 $(".content").append(errorDiv).delay(2500).fadeIn();
             }
         });
@@ -101,12 +110,11 @@ function lazyLoad() {
 jQuery(function($){
     search();
     $(".menu").on('click','a', loadFabrikant);
-    $("#searchInputField").on('keyup', search);
+    $("#searchInputField").on('keypress', search);
     $("body").on('click', ".armatuur", lightsOn);
     $("body").on('click', ".lightbox", lightsOff);
-    $("h1").on('click','a', function() {
-        $("#searchInputField").val('');
-        search();
+    $("h1").on('click', function() {
+        getArmaturen('', 'name');
     });
 
     $(window).scroll(function() {   

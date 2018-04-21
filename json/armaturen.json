@@ -1,186 +1,186 @@
 [
     {
-        "image": "src/images/2000.jpg",
+        "image": "2000.jpg",
         "name": "Industria 2000",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/2500.jpg",
+        "image": "2500.jpg",
         "name": "Industria 2500",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/2600.JPG",
+        "image": "2600.JPG",
         "name": "Industria 2600",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/2700.jpg",
+        "image": "2700.jpg",
         "name": "Industria 2700",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/altra.jpg",
+        "image": "altra.jpg",
         "name": "Altra",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/aresa.jpg",
+        "image": "aresa.jpg",
         "name": "Aresa",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/brisa.jpg",
+        "image": "brisa.jpg",
         "name": "Brisa",
         "fabrikant": "Lightronics"
     },
     {
-        "image": "src/images/citea.jpg",
+        "image": "citea.jpg",
         "name": "Citea Midi",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/fgs103.gif",
+        "image": "fgs103.gif",
         "name": "FGS103",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/furyo3.jpg",
+        "image": "furyo3.jpg",
         "name": "Furyo 3",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/kfk.jpg",
+        "image": "kfk.jpg",
         "name": "KFK",
         "fabrikant": "Lightronics"
     },
     {
-        "image": "src/images/luma-bgp.jpg",
+        "image": "luma-bgp.jpg",
         "name": "Luma BGP",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/mistral.jpg",
+        "image": "mistral.jpg",
         "name": "Mistral",
         "fabrikant": "Lightronics"
     },
     {
-        "image": "src/images/onyx.jpg",
+        "image": "onyx.jpg",
         "name": "Onyx",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/prt.jpg",
+        "image": "prt.jpg",
         "name": "PRT",
         "fabrikant": "Lightronics"
     },
     {
-        "image": "src/images/scala.jpg",
+        "image": "scala.jpg",
         "name": "Scala",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/schreder-mc2.jpg",
+        "image": "schreder-mc2.jpg",
         "name": "Schreder MC2",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/schreder-vn.jpg",
+        "image": "schreder-vn.jpg",
         "name": "Schreder VN",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/sintra.jpg",
+        "image": "sintra.jpg",
         "name": "Sintra",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/srs201.jpg",
+        "image": "srs201.jpg",
         "name": "SRS201",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/trk.jpg",
+        "image": "trk.jpg",
         "name": "TRK",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/tzf.jpg",
+        "image": "tzf.jpg",
         "name": "TZ",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/ampera.jpg",
+        "image": "ampera.jpg",
         "name": "Ampera",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/teceo.jpg",
+        "image": "teceo.jpg",
         "name": "Teceo",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/axia2.jpg",
+        "image": "axia2.jpg",
         "name": "Axia 2",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/albany.jpg",
+        "image": "albany.jpg",
         "name": "Albany",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/alura.jpg",
+        "image": "alura.jpg",
         "name": "Alura",
         "fabrikant": "Schreder"
     },
     {
-        "image": "src/images/arc-led-bgp618.jpg",
+        "image": "arc-led-bgp618.jpg",
         "name": "Arc BGP618 LED",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/bgp760.jpg",
+        "image": "bgp760.jpg",
         "name": "BGP760",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/cambridge-cds580.jpg",
+        "image": "cambridge-cds580.jpg",
         "name": "Cambridge CDS580",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/cds711.jpg",
+        "image": "cds711.jpg",
         "name": "CDS711",
         "fabrikant": "Philips"
     },    
     {
-        "image": "src/images/iridium-sgs252-led.jpg",
+        "image": "iridium-sgs252-led.jpg",
         "name": "Iridium SGS252 LED",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/luma-bgp615.jpg",
+        "image": "luma-bgp615.jpg",
         "name": "Luma BGP615",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/luma-bgp623.jpg",
+        "image": "luma-bgp623.jpg",
         "name": "Luma BGP623",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/urbanstar-bds100.jpg",
+        "image": "urbanstar-bds100.jpg",
         "name": "UrbanStar BDS100",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/xgs-201.jpg",
+        "image": "xgs-201.jpg",
         "name": "XGS201",
         "fabrikant": "Philips"
     },
     {
-        "image": "src/images/z1.jpg",
+        "image": "z1.jpg",
         "name": "Z1",
         "fabrikant": "Schreder"
     }
