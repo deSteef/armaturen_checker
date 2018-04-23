@@ -1,4 +1,5 @@
 var smallGrid = false;
+var lazyLoader = true;
 
 function toggleZoom() {
     var thisEl = $(this).closest(".armatuur");
@@ -61,11 +62,13 @@ function getArmaturen(query, attribute) {
 }
 
 function search() {
+    lazyLoader = false;
     var query = $("#searchInputField").val();
     getArmaturen(query, 'name');
 }
 
 function loadFabrikant() {
+    lazyLoader = false;
     var query = $(this).text();
     getArmaturen(query, 'fabrikant');
 }
@@ -121,6 +124,7 @@ jQuery(function($){
     $("#searchInputField").on('keyup', search);
     $("body").on('click', ".armatuur", toggleZoom);
     $("h1").on('click', function() {
+        lazyLoader = true;
         $("input[type=text]").val(null);
         getArmaturen('', 'name');
     });
@@ -134,7 +138,10 @@ jQuery(function($){
 
     $(window).scroll(function() {   
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
-            lazyLoad();
+            if (lazyLoader) {
+                lazyLoad();    
+            }
+            
         }
     });
     
