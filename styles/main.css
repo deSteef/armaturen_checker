@@ -37,8 +37,15 @@ a:hover{
     width: 24%;
     background-color: #fff;
     height: 200px;
-    margin: 3.5px;
+    margin: 3px;
     border: 1px solid lightgray;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+}
+.armatuur-sm {
+    width: 19%;
+    height: 170px;
 }
 .armatuur img {
     display: block;
@@ -52,16 +59,22 @@ a:hover{
     width: 100%;
     text-align: center;
 }
-.clicked img {
-    width: 100%;
-}
-.lightbox {
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 80%;
+.zoom-in {
+    width: 98.5%;
     height: auto;
+    min-height: 500px;
+}
+.zoom-in img {
+    width: 100%;
+    height: auto;
+}
+.zoom-in p {
+    background-color: #fff;
+    font-size: 1.5em;
+    padding: 5px;
+    margin: auto;
+    width: auto;
+    position: initial;
 }
 .loader {
     position: fixed;
@@ -76,4 +89,19 @@ a:hover{
     color: #000;
     margin-left: 1em;
     font-size: 1rem;
+}
+#settings {
+    float: right;
+    margin-top: -50px;
+    margin-right: 10px;
+}
+button {
+    width: 50px;
+    height: 20px;
+    border: none;
+    outline: none;
+}
+.selected {
+    background-color: #3366ff;
+    color: #fff;
 }

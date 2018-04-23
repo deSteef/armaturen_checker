@@ -1,19 +1,21 @@
-function lightsOn() {
-    var url = $(this).closest(".armatuur").children("img").attr("src");
-    var armatuur = $("<img></img>");
-    armatuur.attr("src", url);
-    $(".container").hide();
-    $("body").css({"background-color": "#000"})
-    armatuur.addClass("lightbox");
-    $("body").append(armatuur).hide().fadeIn();
+var smallGrid = false;
+
+function toggleZoom() {
+    var thisEl = $(this).closest(".armatuur");
+    if (thisEl.hasClass('zoom-in')) {
+        thisEl.removeClass('zoom-in');
+    } else {
+        thisEl.addClass('zoom-in');
+    }
 }
 
-function lightsOff() {
-    $("body").css({"background-color": "#eee"});
-    $(".container").show().fadeIn();
-    $(this).hide().fadeOut();
+function toggleColumns(bool) {
+    if (bool) {
+        $('.armatuur').removeClass('armatuur-sm');  
+    } else {
+        $('.armatuur').addClass('armatuur-sm');      
+    }
 }
-
 /**
  * Search in JSON for armaturen. 
  * @param string query search value
@@ -23,13 +25,16 @@ function lightsOff() {
 function getArmaturen(query, attribute) {
     $.getJSON('json/armaturen.json', function(result) {
         var divElements = $.map(result, function(armatuur, i) {
-            // search in attribute name 
+            // search in attribute name, limit = 10
             if (attribute === 'name') {
                 if (armatuur.name.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
                     var divArmatuur = $("<div></div>");
                     divArmatuur.append("<img src=\"images/" + armatuur.image + "\"></img>");
                     divArmatuur.append("<p>"+armatuur.name + "</p>");
                     divArmatuur.addClass("armatuur");
+                    if (smallGrid) {
+                        divArmatuur.addClass("armatuur-sm");
+                    }
                     return divArmatuur;
                 } else {
                     return;
@@ -41,6 +46,9 @@ function getArmaturen(query, attribute) {
                     divArmatuur.append("<img src=\"images/" + armatuur.image + "\"></img>");
                     divArmatuur.append("<p>"+armatuur.name + "</p>");
                     divArmatuur.addClass("armatuur");
+                    if (smallGrid) {
+                        divArmatuur.addClass("armatuur-sm");
+                    }
                     return divArmatuur;
                 } else {
                     return;
@@ -52,6 +60,7 @@ function getArmaturen(query, attribute) {
         // print results
         $(".content").find(".armatuur").remove();
         $(".content").append(divElements).hide().fadeIn();
+
     }); 
 }
 
@@ -73,7 +82,7 @@ function lazyLoad() {
             dataType: 'json',
             beforeSend: function() {
                 var loadIndicator = $("<div></div>");
-                loadIndicator.append("<img src=\"icons/loading.svg\"></img>");
+                loadIndicator.append("<div class=\"lds-roller\"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>");
                 loadIndicator.addClass("loader");
                 $(".content").append(loadIndicator);
             },
@@ -99,7 +108,7 @@ function lazyLoad() {
             error: function(error) {
                 var errorDiv = $("<div></div>");
                 errorDiv.append("<p>Error fetching data</p>");
-                errorDiv.css({"color":"red", "display":"inline-block","width":"100%"}); // use css method
+                errorDiv.css({"color":"red", "display":"inline-block","width":"100%"}); // use css method for practice
                 errorDiv.css({"font-weight":"bold","font-size":"1.5em","text-align":"center"});
                 $(".content").append(errorDiv).delay(2500).fadeIn();
             }
@@ -110,11 +119,18 @@ function lazyLoad() {
 jQuery(function($){
     search();
     $(".menu").on('click','a', loadFabrikant);
-    $("#searchInputField").on('keypress', search);
-    $("body").on('click', ".armatuur", lightsOn);
-    $("body").on('click', ".lightbox", lightsOff);
+    $("#searchInputField").on('keyup', search);
+    $("body").on('click', ".armatuur", toggleZoom);
     $("h1").on('click', function() {
+        $("input[type=text]").val(null);
         getArmaturen('', 'name');
+    });
+    $('button').on('click',function() {
+        $(this).addClass("selected");
+        $(this).siblings().removeClass('selected');
+        smallGrid = ($(this).text() === 'small') ? false : true;
+        toggleColumns(smallGrid);
+        smallGrid = !smallGrid;
     });
 
     $(window).scroll(function() {   

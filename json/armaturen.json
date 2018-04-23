@@ -55,11 +55,6 @@
         "fabrikant": "Lightronics"
     },
     {
-        "image": "luma-bgp.jpg",
-        "name": "Luma BGP",
-        "fabrikant": "Philips"
-    },
-    {
         "image": "mistral.jpg",
         "name": "Mistral",
         "fabrikant": "Lightronics"
@@ -105,7 +100,7 @@
         "fabrikant": "Philips"
     },
     {
-        "image": "tzf.jpg",
+        "image": "tz.jpg",
         "name": "TZ",
         "fabrikant": "Schreder"
     },
