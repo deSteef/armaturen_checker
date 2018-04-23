@@ -1,5 +1,5 @@
 var smallGrid = false;
-var lazyLoader = true;
+var lazyLoader;
 
 function toggleZoom() {
     var thisEl = $(this).closest(".armatuur");
@@ -120,6 +120,7 @@ function lazyLoad() {
 
 jQuery(function($){
     search();
+    lazyLoader = true;
     $(".menu").on('click','a', loadFabrikant);
     $("#searchInputField").on('keyup', search);
     $("body").on('click', ".armatuur", toggleZoom);
