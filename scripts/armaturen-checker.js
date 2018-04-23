@@ -25,7 +25,7 @@ function toggleColumns(bool) {
 function getArmaturen(query, attribute) {
     $.getJSON('json/armaturen.json', function(result) {
         var divElements = $.map(result, function(armatuur, i) {
-            // search in attribute name, limit = 10
+            // search in attribute name
             if (attribute === 'name') {
                 if (armatuur.name.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
                     var divArmatuur = $("<div></div>");
@@ -36,8 +36,6 @@ function getArmaturen(query, attribute) {
                         divArmatuur.addClass("armatuur-sm");
                     }
                     return divArmatuur;
-                } else {
-                    return;
                 }
             // compare fabrikant
             } else if (attribute === 'fabrikant') {
@@ -50,8 +48,6 @@ function getArmaturen(query, attribute) {
                         divArmatuur.addClass("armatuur-sm");
                     }
                     return divArmatuur;
-                } else {
-                    return;
                 }
             } else {
                 console.log('error occured. Searching for: ' + query + ' within ' + attribute);
@@ -99,6 +95,9 @@ function lazyLoad() {
                     divArmatuur.append("<img src=\"images/" + armatuur.image + "\"></img>");
                     divArmatuur.append("<p>"+armatuur.name + "</p>");
                     divArmatuur.addClass("armatuur");
+                    if (smallGrid) {
+                        divArmatuur.addClass("armatuur-sm");
+                    }
                     return divArmatuur;
                 });
                 var newItem = $("<div></div>").append(divElements).hide();
