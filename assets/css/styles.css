@@ -100,6 +100,7 @@ button {
     height: 20px;
     border: none;
     outline: none;
+    background-color: rgb(221,221,211);
 }
 .selected {
     background-color: #3366ff;
