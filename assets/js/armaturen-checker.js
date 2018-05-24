@@ -24,13 +24,13 @@ function toggleColumns(bool) {
  */
 
 function getArmaturen(query, attribute) {
-    $.getJSON('json/armaturen.json', function(result) {
+    $.getJSON('assets/json/armaturen.json', function(result) {
         var divElements = $.map(result, function(armatuur, i) {
             // search in attribute name
             if (attribute === 'name') {
                 if (armatuur.name.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
                     var divArmatuur = $("<div></div>");
-                    divArmatuur.append("<img src=\"images/" + armatuur.image + "\"></img>");
+                    divArmatuur.append("<img src=\"assets/images/" + armatuur.image + "\"></img>");
                     divArmatuur.append("<p>"+armatuur.name + "</p>");
                     divArmatuur.addClass("armatuur");
                     if (smallGrid) {
@@ -42,7 +42,7 @@ function getArmaturen(query, attribute) {
             } else if (attribute === 'fabrikant') {
                 if (armatuur.fabrikant.toLowerCase() === query.toLowerCase()) {
                     var divArmatuur = $("<div></div>");
-                    divArmatuur.append("<img src=\"images/" + armatuur.image + "\"></img>");
+                    divArmatuur.append("<img src=\"assets/images/" + armatuur.image + "\"></img>");
                     divArmatuur.append("<p>"+armatuur.name + "</p>");
                     divArmatuur.addClass("armatuur");
                     if (smallGrid) {
@@ -76,7 +76,7 @@ function loadFabrikant() {
 function lazyLoad() {
     var notYetLoaded = $(".content").find(".loader");
     if (notYetLoaded.length < 1) {
-        $.ajax('json/armaturen.json', {
+        $.ajax('assets/json/armaturen.json', {
             contentType: 'application/json',
             dataType: 'json',
             beforeSend: function() {
@@ -95,7 +95,7 @@ function lazyLoad() {
                 // load all 
                 var divElements = $.map(result, function(armatuur, i) {
                     var divArmatuur = $("<div></div>");
-                    divArmatuur.append("<img src=\"images/" + armatuur.image + "\"></img>");
+                    divArmatuur.append("<img src=\"assets/images/" + armatuur.image + "\"></img>");
                     divArmatuur.append("<p>"+armatuur.name + "</p>");
                     divArmatuur.addClass("armatuur");
                     if (smallGrid) {
