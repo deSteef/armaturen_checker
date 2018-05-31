@@ -5,12 +5,17 @@
         "fabrikant": "Philips"
     },
     {
+        "image": "2037.jpg",
+        "name": "Industria 2037",
+        "fabrikant": "Philips"
+    },
+    {
         "image": "2500.jpg",
         "name": "Industria 2500",
         "fabrikant": "Philips"
     },
     {
-        "image": "2600.JPG",
+        "image": "2600.jpg",
         "name": "Industria 2600",
         "fabrikant": "Philips"
     },
@@ -52,6 +57,11 @@
     {
         "image": "kfk.jpg",
         "name": "KFK",
+        "fabrikant": "Lightronics"
+    },
+    {
+        "image": "kbm.jpg",
+        "name": "KBM",
         "fabrikant": "Lightronics"
     },
     {
