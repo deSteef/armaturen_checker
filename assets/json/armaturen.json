@@ -73,6 +73,11 @@
         "image": "onyx.jpg",
         "name": "Onyx",
         "fabrikant": "Schreder"
+	},
+	{
+        "image": "padvinder.jpg",
+        "name": "Padvinder",
+        "fabrikant": "Philips"
     },
     {
         "image": "prt.jpg",
